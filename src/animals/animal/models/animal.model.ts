@@ -1,3 +1,4 @@
+import * as mongoose from 'mongoose';
 
 export enum AnimalType  {
   Dog = 'DOG',
@@ -10,3 +11,8 @@ export interface Animal {
   type: AnimalType;
   image: string;
 }
+export const AnimalSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  type: { type: AnimalType, required: true },
+  image: { type: String, required: true },
+});
