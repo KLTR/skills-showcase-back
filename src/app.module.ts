@@ -5,17 +5,13 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-import { ProductsModule } from './products/products.module';
-import { AuthModule } from './auth/auth.module';
-import { UsersModule } from './users/users.module';
+import { AnimalModule } from './animals/animal/animal.module';
 
 const uri =
-  'mongodb+srv://admin:DqMyy5mTB6IhuIpt@cluster0-ml2c0.mongodb.net/nestjs-demo?retryWrites=true&w=majority';
+  'mongodb+srv://admin:DqMyy5mTB6IhuIpt@cluster0-ml2c0.mongodb.net/skills-showcase?retryWrites=true&w=majority';
 @Module({
   imports: [
-    ProductsModule,
-    AuthModule,
-    UsersModule,
+    AnimalModule,
     MongooseModule.forRoot(uri, { useNewUrlParser: true }),
   ],
   controllers: [AppController],
